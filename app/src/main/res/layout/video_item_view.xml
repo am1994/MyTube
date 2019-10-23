@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable name="video" type="com.devmina.droid_ant.getdata.data.VideoData"/>
+
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="0dp"
+            app:cardMaxElevation="1dp"
+            app:cardElevation="0.7dp"
+            app:contentPadding="10dp"
+            app:contentPaddingBottom="5dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+    >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/imgTh"
+            android:contentDescription="@string/videoimage"
+            tools:srcCompat="@tools:sample/avatars[8]"
+            app:imageUrl="@{video.thumbnail}"
+
+             />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txTitle"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/title_size" android:textColor="@color/title"
+            tools:text="title"
+            android:text="@{video.title}"
+           />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

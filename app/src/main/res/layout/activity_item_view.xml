@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+    <data>
+        <variable name="activity" type="com.devmina.droid_ant.getdata.data.ActivityData"/>
+    </data>
+<com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="0dp"
+        app:cardMaxElevation="1dp"
+        app:cardElevation="0.7dp"
+        app:contentPadding="10dp"
+        app:contentPaddingBottom="0dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <ImageView
+                android:id="@+id/aImage"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:foregroundGravity="center"
+                app:circleImageUrl="@{activity.thumbnail}"
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/thumbnail"/>
+
+        <TextView
+                android:id="@+id/aTitle"
+                android:layout_width="150dp"
+                  android:textAlignment="center"
+                  android:text="@{activity.title}"
+                  tools:text="@string/titleVideo"
+                  android:layout_toEndOf="@id/aImage"
+                  android:layout_height="match_parent"
+        />
+        <TextView
+                android:id="@+id/aDate"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/aTitle"
+                android:layout_marginTop="55dp"
+                android:text="@{activity.date}"
+                tools:text="@string/date"/>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+</layout>

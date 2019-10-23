@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+android {
+    compileSdkVersion 28
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.devmina.droid_ant.getdata"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+        }
+
+       buildTypes.each{
+           Properties properties = new Properties()
+           properties.load(project.rootProject.file("local.properties").newDataInputStream())
+           def youtubeApiKey = properties.getProperty("youtube_api_key", "")
+
+           it.buildConfigField 'String', "YOUTUBE_API_KEY", youtubeApiKey
+
+           it.resValue 'string', "api_key", youtubeApiKey
+       }
+    }
+    androidExtensions {
+        experimental = true
+    }
+    configurations {
+        all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+
+    //Constrait layout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //retrofit
+implementation "com.squareup.retrofit2:retrofit:2.6.0"
+implementation "com.squareup.retrofit2:converter-gson:2.6.0"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.1.0"
+
+
+    // Coroutines for getting off the UI thread
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2'
+   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2'
+
+
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //Recycler View
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    //Youtube Api
+    //noinspection GradlePath
+    implementation files('libs\\YouTubeAndroidPlayerApi.jar')
+
+    implementation('com.google.api-client:google-api-client-android:1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-youtube:v3-rev212-1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+ 
+
+
+
+    //android youtube player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.4'
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    //design UI/UX
+    implementation 'com.android.support:design:28.0.0'
+    //cardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //Expanded Text View
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+
+
+}

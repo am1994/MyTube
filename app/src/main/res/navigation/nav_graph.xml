@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph" app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/playlistFragment"
+              android:name="com.devmina.droid_ant.getdata.playlist.PlaylistFragment">
+        <action android:id="@+id/action_playlistFragment_to_playlistVideosFragment"
+                app:destination="@id/playlistVideosFragment"/>
+    </fragment>
+
+
+    <fragment android:id="@+id/videosFragment"
+              android:name="com.devmina.droid_ant.getdata.videos.VideosFragment">
+
+
+        <!--<argument android:name="selectedVideo" app:argType="string"/>-->
+
+        <argument
+            android:name="selectedVideo"
+            app:argType="com.devmina.droid_ant.getdata.data.VideoData"/>
+
+    </fragment>
+    <fragment android:id="@+id/homeFragment" android:name="com.devmina.droid_ant.getdata.home.HomeFragment">
+             <!--android:label="HomeFragment"-->
+        <action android:id="@+id/action_homeFragment_to_videosFragment" app:destination="@id/videosFragment"/>
+    </fragment>
+    <fragment android:id="@+id/moreFragment" android:name="com.devmina.droid_ant.getdata.more.MoreFragment"
+              >
+        <action android:id="@+id/action_moreFragment_to_aboutFragment" app:destination="@id/aboutFragment"/>
+    </fragment>
+    <fragment android:id="@+id/activityFragment" android:name="com.devmina.droid_ant.getdata.activity.ActivityFragment"
+             />
+    <fragment android:id="@+id/playlistVideosFragment"
+              android:name="com.devmina.droid_ant.getdata.playlistVideos.PlaylistVideosFragment"
+              >
+        <argument android:name="selectedPlaylist" app:argType="com.devmina.droid_ant.getdata.data.PlaylistData"/>
+    </fragment>
+    <fragment android:id="@+id/aboutFragment" android:name="com.devmina.droid_ant.getdata.about.AboutFragment"
+              >
+        <argument android:name="desc" app:argType="string"/>
+    </fragment>
+
+</navigation>

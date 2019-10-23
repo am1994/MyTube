@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MyTube</string>
+    <string name="Data">TextView</string>
+    <string name="image_profil">thumbnail</string>
+    <string name="videoimage">videoImage</string>
+    <string name="todo">TODO</string>
+    <string name="description_text"> description: this  video for you , it talks about your daily and everything related to your life</string>
+    <string name="title">Video title</string>
+    <string name="date">27/09/2019</string>
+    <string name="desc">Description :</string>
+    <!-- navigation bottom View Item -->
+    <string name="menu_home">Home</string>
+    <string name="menu_Playlist">Playlist</string>
+    <string name="menu_activity">Activity</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_more">More</string>
+    <string name="titleVideo">My great Video</string>
+    <string name="description">my video talk about</string>
+    <string name="total_subscribers">Total Subscribers</string>
+    <string name="channel_title">Channel Title</string>
+    <string name="logo">Logo</string>
+    <string name="about">ABOUT</string>
+    <string name="contact_us">Contact US:</string>
+    <string name="unsubcriber">UNSUBCRIBER</string>
+    <string name="total_views">Total Views</string>
+    <string name="about_description">Description:</string>
+    <string name="about_channel">Hi, My name is amina and I\'m learning everything about designing and tech. I\'ll be
+        sharing my experiences here!
+    </string>
+    <string name="thumbnail">thumbnail</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">0dp</dimen>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="textSize">15sp</dimen>
+    <dimen name="desc_size">20sp</dimen>
+    <dimen name="title_size">16sp</dimen>
+
+</resources>

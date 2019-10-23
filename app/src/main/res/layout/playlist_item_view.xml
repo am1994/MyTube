@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        xmlns:tools="http://schemas.android.com/tools"
+         >
+
+    <data>
+        <variable name="playlist" type="com.devmina.droid_ant.getdata.data.PlaylistData"/>
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="0dp"
+            app:cardMaxElevation="1dp"
+            app:cardElevation="0.7dp"
+            app:contentPadding="10dp"
+            app:contentPaddingBottom="0dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+           >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars[4]"
+                android:id="@+id/thumbnailID"
+                app:imageUrl="@{playlist.thumbnail}"
+                android:contentDescription="@string/image_profil"
+                />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/data"
+                android:layout_marginTop="180dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif"
+                tools:text="Playlist TItle"
+                android:text="@{playlist.title}"
+                android:textSize="@dimen/title_size" android:textColor="@color/title"
+
+        />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
