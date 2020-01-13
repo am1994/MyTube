@@ -5,4 +5,9 @@ you should write your key in local.properties
 
 write the "channel-id" on the service file (network/service) in Channelid variable
 
-https://github.com/am1994/MyTube/blob/master/playlist.PNG
+![](home.png)
+![](playlist.png)
+![](playlists.png)
+![](more.png)
+![](video.png)
+![](videosPlaylist.png)
